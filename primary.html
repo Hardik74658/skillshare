@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adapted Skill Share</title>
+    <!-- Font Awesome CSS  -->
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+</head>
+<style>
+/*
+font-family: 'DM Sans', sans-serif;
+font-family: 'Lora', serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;900&family=Lora:wght@400;700&display=swap');
+
+/* ----------------------------CSS Reset---------------------------- */
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ----------------------------Global Classes---------------------------- */
+
+:root{
+    --primary-font: 'DM Sans', sans-serif;
+    --title-font: 'Lora', serif;
+    --primary-col: #002333;
+    /* --primary-col: #fff; */
+    --primary-light: #037cb4;
+    --btn-col: #00FF84;
+    /* --btn-col: #f98603; */
+    --secondary-col: #000;
+    --dark-bg: #000;
+    --btn-shadow-bg: #b4f8fa;
+    --third-col: #3722d3;
+    /* --third-col: #f98603; */
+}
+
+body{
+    font-family: var(--primary-font);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn-glow{
+    color: var(--btn-col);
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: 1px solid var(--btn-col);
+    border-radius: 5px;
+    padding: 0.3rem 2rem;
+}
+.btn-glow:hover{
+    background-color: var(--btn-col);
+    color: var(--primary-col);
+}
+
+.btn-normal{
+    font-size: 1.13rem;
+    font-weight: 700;
+    padding: 0.9rem 4.5rem;
+    border-radius: 5px;
+    background-color: var(--btn-col);
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+}
+.btn-normal:hover{
+    opacity: 0.9;
+}
+
+.btn-shadow{
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 21px;
+    color: var(--third-col);
+    border-radius: 5px;
+}
+.btn-shadow:hover{
+    background-color: rgba(0, 0, 0, 0.207);
+    /* opacity: 0.9    ; */
+}
+section{
+    padding: 0 10vw;
+}
+
+/* ----------------------------Navbar---------------------------- */
+nav{
+    height: 10vh;
+    background-color: var(--primary-col);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10vw;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+nav img{
+    height: 5vh;
+}
+
+/* ----------------------------Hero Section---------------------------- */
+.hero{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    /* position: relative; */
+}
+.hero::after{
+    content: "";
+    /* background: url("/landing_page/images/background1.jpg"); */
+    background: url("/landing_page/images/background2.jpg");
+    background-size: cover;
+    height: 90vh;
+    width: 100vw;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    z-index: -1;
+    opacity: 0.4;
+}
+.hero::before{
+    content: "";
+    background-color: var(--primary-col);
+    height: 90vh;
+    width: 100vw;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    z-index: -2;
+}
+
+.hero-text{
+    /* color: var(--secondary-col); */
+    color: white;
+}
+.hero-text h1{
+    font-family: var(--title-font);
+    font-weight: 700;
+    font-size: 2.4rem;
+}
+.hero h1 + p{
+    font-size: 1.13rem;
+    margin: 1rem 0;
+    line-height: 1.8rem;
+}
+.hero-text button + p{
+    font-size: 12px;
+    margin-top: 2rem;
+    letter-spacing: 2px;
+}
+
+.hero-video{
+    margin-right: 8vw;
+}
+
+/* ----------------------------Popular Classes Section---------------------------- */
+
+.popular-classes h3{
+    font-weight: 700;
+    font-size: 26px;
+    margin: 4rem 0 2.5rem;
+}
+
+.classes-container{
+    display: flex;
+    justify-content: space-between;
+}
+.class-box{
+    /* border: 2px solid blue; */
+    width: 270px;
+}
+.class-box img{
+    border-radius: 10px;
+}
+.class-box p{
+    font-weight: 900;
+    font-size: 15px;
+    margin-top: 1rem;
+    line-height: 25px;
+}
+.btn-shadow-container{
+    margin: 2.5rem 0 4rem auto;
+    width: fit-content;
+    
+}
+
+/* ----------------------------Intro Section---------------------------- */
+.intro{
+    background-color: var(--third-col);
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 3rem;
+    color: white;
+    padding: 2rem 10vw;
+}
+
+
+.intro-text h1{
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.intro-text p{
+    font-weight: 700;
+    font-size: 18px;
+    margin: 1rem 0;
+}
+
+.intro-text ul{
+    margin-left: 1.2rem;
+}
+.intro-text ul li{
+    margin: 1rem 0;
+}
+
+/* ----------------------------features Section---------------------------- */
+.features{
+    text-align: center;
+    color: var(--primary-col);
+    background-color: white;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+}
+
+.features h3{
+    font-family: var(--title-font);
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 5rem;
+}
+
+.feature-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.feature{
+    /* border: 2px solid red; */
+    width: 250px;
+}
+
+.feature .icon{
+    color: var(--primary-col);
+    /* opacity: 0.3; */
+}
+
+.feature h4{
+    font-size: 18px;
+    margin: 1.5rem 0;
+}
+
+.feature p{
+    font-size: 18px;
+}
+
+/* ----------------------------footer---------------------------- */
+
+footer{
+    background-color: var(--primary-col);
+    text-align: center;
+    padding: 5rem 30vw;
+    color: white;
+}
+
+footer h3{
+    font-family: var(--title-font);
+    font-weight: 400;
+    font-size: 48px;
+    margin-bottom: 2rem;
+}
+
+footer button + p{
+    font-size: 12px;
+    margin: 1rem 0 7rem;
+}
+
+
+/* ----------------------------Media Queries---------------------------- */
+@media (max-width: 1180px){
+    section, nav{
+        padding: 0 2vw;
+    }
+    .hero-video{
+        margin-right: 0;
+    }
+    .class-box{
+        width: 200px;
+    }
+    .class-box img{
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px){
+    .hero-video iframe{
+        width: 400px;
+    }
+    .hero, .hero::before, .hero::after{
+        height: 175vh;
+    }
+}
+
+@media (max-width: 768px){
+    .hero{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-video iframe{
+        width: 560px;
+    }
+    .intro{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 570px){
+    .hero-video{
+        width: 90%;
+        /* border: 2px solid yellow; */
+    }
+    .hero-video iframe{
+        /* border: 2px solid white; */
+        width: 100%;
+    }
+    .classes-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .class-box{
+        width: 95%;
+    }
+    .feature-container{
+        flex-direction: column;
+        gap: 4rem;
+
+    }
+    .feature{
+        width: 95%;
+    }
+    footer{
+        padding: 5rem 5vw;
+    }
+}
+
+@media (max-width: 435px){
+    nav{
+        flex-direction: column;
+        height: 15vh;
+        justify-content: space-evenly;
+    }
+    .hero{
+        gap: 1rem;
+    }
+}
+
+</style>
+
+<body>
+<nav>
+    <!-- <img src="/landing_page/images/Skillshare-logo1.png" alt=""> -->
+    <img src="/images/Skillshare-logo1.png" alt="">
+    <a class="btn-glow" href="#">Start Learning Now</a>
+</nav>
+
+<!-- hero section -->
+<section class="hero">
+    <div class="hero-text">
+        <img src="/images/logo_original.png" alt="">
+        <h1>Indoor Gardening: Grow Houseplants, Veggies, and Herbs</h1>
+        <p>Join YouTuber and scientist-turned-gardener Ekta Chaudhary of Garden Up for a brand new Skillshare
+            Original class on how to grow houseplants, veggies, herbs, and flowers even in the smallest of spaces!
+        </p>
+        <button class="btn-normal">Get 1 Month Free</button>
+        <p>NO COMMITMENTS. CANCEL ANYTIME.</p>
+    </div>
+    <div class="hero-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/hB6icWZxNFQ"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+</section>
+
+<!-- Popular Classes Section -->
+<section class="popular-classes">
+    <h3>Explore Popular Classes on Skillshare</h3>
+    <div class="classes-container">
+        <div class="class-box">
+            <img src="/images/card1.jpg" alt="">
+            <p>Social Media Success: Video Storytelling on YouTube & Beyond with Lilly Singh</p>
+        </div>
+        <div class="class-box">
+            <img src="images/card2.jpg" alt="">
+            <p>Plants at Home: Uplift Your Spirit & Your Space with Christopher Griffin aka PlantKween</p>
+        </div>
+        <div class="class-box">
+            <img src="/images/card3.jpg" alt="">
+            <p>YouTube Success: Script, Shoot, and Edit with Marques Brownlee aka MKBHD</p>
+        </div>
+        <div class="class-box">
+            <img src="/images/card4.jpg" alt="">
+            <p>Make Creativity Your Career: Six Exercises to Create a Successful Side Hustle with Andy J. Pizza</p>
+        </div>
+    </div>
+    <div class="btn-shadow-container">
+        <a class="btn-shadow" href="#">Unlimited access to thousands of classes </a>
+    </div>
+</section>
+
+<!-- Intro Section -->
+<section class="intro">
+        <!-- <img src="/landing_page/images/star.jpg" alt=""> -->
+        <img height="300px" src="/images/star.jpg" alt="">
+        <div class="intro-text">
+            <h1>Indoor Gardening with Ekta Chaudhary</h1>
+            <p>Throughout the class, you'll learn how to:</p>
+            <ul>
+                <li>Put together your own soil blend</li>
+                <li>Nurture decorative houseplants to keep your home garden lush</li>
+                <li>Develop the perfect watering schedule for your plants</li>
+                <li>Grow your own food indoors!</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- features section -->
+    <section class="features">
+        <h3>Why Join Skillshare?</h3>
+        <div class="feature-container">
+            <div class="feature">
+                <i class="fa-solid fa-photo-film fa-7x icon"></i>
+                <h4>MEMBERSHIP WITH MEANING</h4>
+                <p>With so much to explore, real projects to create, and the support of fellow-creatives, Skillshare empowers you to accomplish real growth.</p>
+            </div>
+            <div class="feature">
+                <i class="fa-solid fa-business-time fa-7x icon"></i>
+                <h4>CLASSES DESIGNED FOR REAL LIFE</h4>
+                <p>Move your creative journey forward without putting life on hold. Skillshare helps you find inspiration that fits your routine.</p>
+            </div>
+            <div class="feature">
+                <i class="fa-solid fa-users-line fa-7x icon"></i>
+                <h4>LEARN FROM REAL CREATORS</h4>
+                <p>Skillshare teachers are icons, experts, and industry rock stars excited to share their experience, wisdom, and trusted tools with you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section -->
+    <footer>
+        <h3>Join millions of creators around the world</h3>
+        <button class="btn-normal">Get 1 Month Free</button>
+        <p>NO COMMITMENTS. CANCEL ANYTIME.</p>
+        <p>© Skillshare, Inc. 2021. All rights reserved.</p>
+    </footer>
+    <!-- fontawsome js -->
+    <script src="/fontawesome/js/all.min.js"></script>
+</body>
+
+</html>
